@@ -1,0 +1,102 @@
+<!DOCTYPE_html>
+<html>
+	<head>
+		<title>Bus Payment Application</title>
+		<!--<link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+		<script src="jquery/jquery.js"></script>-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<script>
+		$( document ).ready(function() {
+			var invisible = "invisible";
+			var formgroup = "form-group";
+		
+			$("#signuplink").click(function() {
+				$("#login").hide();
+				var signup = document.getElementById("signup");
+				signup.setAttribute("class",formgroup);
+			});
+			
+			$("#logsubmit").click(function() {
+				$("#login").hide();
+				$("#signup").hide();
+				var main = document.getElementById("mainpage");
+				main.setAttribute("class",formgroup);
+			});
+			
+			$("#cardbutton").click(function() {
+				$("#login").hide();
+				$("#signup").hide();
+				$("#mainpage").hide();
+				var card = document.getElementById("card");
+				card.setAttribute("class",formgroup);
+			});
+		});
+	</script>
+	<body>
+		<div class="container">
+			<h1>Bus Payment Application</h1>
+			<form>
+				<div class="form-group" id="login">
+					<h2>Sign-in</h2>
+					<label for="email">Email address:</label>
+					<input type="email" class="form-control" id="email">
+					<label for="password">Password:</label>
+					<input type="password" class="form-control" id="password"><br>
+					<button type="button" class="btn btn-default" id="logsubmit">Log in</button>
+					<a href="#" id="signuplink">Don't have an account? Click here</a>
+				</div>
+				<div class="form-group invisible" id="signup">
+					<h1>Register Account</h1>
+					<label for="username">Username:</label>
+					<input type="text" class="form-control" id="username">
+					<label for="password">Password:</label>
+					<input type="password" class="form-control" id="password">
+					<label for="cpassword">Confirm Password:</label>
+					<input type="password" class="form-control" id="cpassword">
+					<label for="email">Email address:</label>
+					<input type="email" class="form-control" id="email">
+					<label for="fname">First name:</label>
+					<input type="text" class="form-control" id="fname">
+					<label for="lname">Last name:</label>
+					<input type="text" class="form-control" id="lname">
+					<label for="address">Address:</label>
+					<input type="text" class="form-control" id="address">
+					<label for="statepo">State/PO:</label>
+					<input type="text" class="form-control" id="statepo">
+					<p>etc......</p>
+					<button type="submit" class="btn btn-default">Create Account</button>
+				</div>
+				<div style="text-align: center;" class="form-group invisible" id="mainpage">
+					<nav class="navbar navbar-inverse">
+						<div class="container-fluid">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+									<label class="icon-bar"></label>
+									<label class="icon-bar"></label>
+									<label class="icon-bar"></label>                        
+								</button>
+								<a class="navbar-brand" href="#">PRESTO</a>
+							</div>
+							<div class="collapse navbar-collapse" id="myNavbar">
+							  <ul class="nav navbar-nav">
+								<li><a href="#">Load Card</a></li>
+								<li><a href="#">Transaction History</a></li>
+							</div>
+						</div>
+					</nav>
+					<p>Welcome, John Doe</p>
+					<label>Balance:</label>
+					<h2>$0.00</h2>
+					<button type="button" class="btn btn-default" id="cardbutton">Show Card</button><br>
+				</div>
+				<div class="form-group invisible" id="card">
+					<img src="image/PRESTO.png"/>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
